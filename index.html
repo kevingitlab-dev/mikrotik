@@ -37,6 +37,7 @@
             <nav class="hidden md:flex space-x-6 text-base">
                 <a href="#about" class="hover:text-brand-primary transition-colors">關於我們</a>
                 <a href="#services" class="hover:text-brand-primary transition-colors">服務項目</a>
+                <a href="#case-studies" class="hover:text-brand-primary transition-colors">解決方案實例</a>
                 <a href="#comparison" class="hover:text-brand-primary transition-colors">優勢比較</a>
                 <a href="#contact" class="hover:text-brand-primary transition-colors">聯絡我們</a>
             </nav>
@@ -148,6 +149,56 @@
             </div>
         </section>
 
+        <!-- New Section: Case Studies -->
+        <section id="case-studies" class="py-20 px-6 scroll-mt-20">
+            <div class="container mx-auto max-w-6xl">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4">中小企業解決方案實例</h3>
+                    <p class="text-base md:text-lg text-gray-600">
+                        我們如何運用 MikroTik 技術，為不同產業的客戶打造高效、安全的網路環境。
+                    </p>
+                </div>
+                <!-- Case Study 1: Multi-office VPN -->
+                <div class="mb-16 md:grid md:grid-cols-2 md:gap-12 items-center">
+                    <div class="md:order-2 mb-6 md:mb-0">
+                        <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/enterprise-vpn-mesh.png" alt="多點辦公室 VPN 串接示意圖" class="w-full h-auto rounded-3xl shadow-xl object-cover">
+                    </div>
+                    <div class="md:order-1">
+                        <h4 class="text-2xl md:text-3xl font-bold text-brand-primary mb-4">案例一：多點辦公室 VPN 串接</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            一家擁有三個分公司的跨國企業，需要一個安全且成本效益高的內部網路連線方案。我們使用 MikroTik 設備，透過 IPsec VPN 實現總部與分公司之間的站點對站點加密連線，確保資料傳輸的機密性與完整性。員工可輕鬆存取總部伺服器資源，並實現中央化的網路管理。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: Public Wi-Fi Hotspot -->
+                <div class="mb-16 md:grid md:grid-cols-2 md:gap-12 items-center">
+                    <div class="mb-6 md:mb-0">
+                        <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/hotspot-mikrotik.png" alt="公共 Wi-Fi 認證與管理示意圖" class="w-full h-auto rounded-3xl shadow-xl object-cover">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl md:text-3xl font-bold text-brand-primary mb-4">案例二：公共 Wi-Fi 認證與管理</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            某連鎖咖啡店希望提供顧客免費 Wi-Fi，並蒐集顧客資料進行行銷分析。我們採用 MikroTik 的 HotSpot 功能，搭配客製化登入頁面，讓顧客可透過社群帳號或電子郵件進行認證。同時，利用 Queue Tree 限制每位使用者的頻寬，確保所有顧客都能有良好的上網體驗，不會因少數人下載大檔案而影響網路品質。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Case Study 3: Multi-line Load Balancing -->
+                <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                    <div class="md:order-2 mb-6 md:mb-0">
+                        <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/mikrotik-lb.png" alt="多線路負載平衡與故障轉移示意圖" class="w-full h-auto rounded-3xl shadow-xl object-cover">
+                    </div>
+                    <div class="md:order-1">
+                        <h4 class="text-2xl md:text-3xl font-bold text-brand-primary mb-4">案例三：多線路負載平衡與故障轉移</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            一間小型線上遊戲公司，需要高度穩定的網路連線，以避免因單一線路斷線而造成服務中斷。我們為其部署了 MikroTik 路由器，並設定了 PCC (Per Connection Classifier) 負載平衡策略，將流量分散到兩條不同的 ISP 網路上，有效提升總頻寬與連線穩定度。一旦其中一條線路失效，系統將自動將所有流量切換到另一條線路，確保服務不中斷。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Comparison Chart Section -->
         <section id="comparison" class="py-20 px-6 scroll-mt-20">
             <div class="container mx-auto max-w-5xl">
@@ -243,8 +294,8 @@
             const canvas = document.getElementById('hero-canvas');
             const ctx = canvas.getContext('2d');
             let particles = [];
-            const particleCount = 70; // 已將粒子數量從 200 減少至 100
-            const linkDistance = 150;
+            const particleCount = 70; // 粒子數量
+            const linkDistance = 150; // 連線距離
 
             // Adjust canvas size on window resize
             function resizeCanvas() {
@@ -271,12 +322,6 @@
                     // Bounce off walls or wrap around
                     if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                     if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-                    // Optional: Wrap around
-                    // if (this.x < 0) this.x = canvas.width;
-                    // if (this.x > canvas.width) this.x = 0;
-                    // if (this.y < 0) this.y = canvas.height;
-                    // if (this.y > canvas.height) this.y = 0;
                 }
 
                 draw() {
