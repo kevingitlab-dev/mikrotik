@@ -45,10 +45,19 @@
     </header>
 
     <main>
-        <!-- Hero Section with animated background -->
+        <!-- Hero Section with dynamic Taipei skyline video background -->
         <section class="relative min-h-screen flex items-center justify-center text-center px-6 py-20 bg-gray-900 text-white overflow-hidden">
-            <!-- Canvas for the animated particles -->
-            <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
+            <!-- Video background -->
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                <!-- Placeholder for a video of Taipei night view -->
+                <!-- You can replace this URL with your own video file or a different online source -->
+                <!-- The following is a placeholder from a public domain video source (Pexels) -->
+                <source src="https://videos.pexels.com/video-files/3831776/3831776-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Overlay to darken the video and improve text readability -->
+            <div class="absolute inset-0 bg-black opacity-50"></div>
 
             <div class="relative z-10 max-w-4xl mx-auto">
                 <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
@@ -67,9 +76,10 @@
         <section id="about" class="py-20 px-6 scroll-mt-20">
             <div class="container mx-auto">
                 <div class="max-w-3xl mx-auto text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold mb-4">我們的故事</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4">我們的故事與專業</h3>
                     <p class="text-base md:text-lg text-gray-600">
-                        我們是一支專精於 MikroTik 網路技術的團隊。在發現市場上，許多中小型企業苦於缺乏專業知識，無法駕馭 MikroTik 這類高性價比硬體的強大功能後，我們決心成為連結技術與需求的橋樑。我們的使命是讓企業級的穩定與安全，以最經濟的方式實現。
+                        我們是一支專精於 MikroTik 網路技術的團隊，團隊中<b>擁有經 MikroTik 官方認證的 MTCNA 與 MTCRE 專業工程師</b>，確保為您提供最專業、最可靠的設計與規劃服務。
+                        在發現市場上，許多中小型企業苦於缺乏專業知識，無法駕馭 MikroTik 這類高性價比硬體的強大功能後，我們決心成為連結技術與需求的橋樑。我們的使命是讓企業級的穩定與安全，以最經濟的方式實現。
                     </p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
@@ -99,8 +109,7 @@
                     <h3 class="text-3xl md:text-4xl font-bold mb-4">我們的專業服務</h3>
                     <p class="text-base md:text-lg text-gray-600">
                         我們鎖定三大高價值利基市場，為不同產業提供量身打造的網路解決方案。
-                    </p>
-                </div>
+                    </p></div>
                 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
                     <!-- Service Card 1 -->
                     <div class="p-8 bg-white rounded-2xl shadow-lg border-t-4 border-brand-primary transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
@@ -225,107 +234,5 @@
             <p>&copy; 2025 MikroTik 專業技術服務團隊。版權所有。</p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Particle Animation
-            const canvas = document.getElementById('hero-canvas');
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-            const particleCount = 70; // 已將粒子數量從 200 減少至 100
-            const linkDistance = 150;
-
-            // Adjust canvas size on window resize
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas(); // Initial size setup
-
-            // Particle class
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.vx = (Math.random() - 0.5) * 0.5;
-                    this.vy = (Math.random() - 0.5) * 0.5;
-                }
-
-                update() {
-                    // Update position
-                    this.x += this.vx;
-                    this.y += this.vy;
-
-                    // Bounce off walls or wrap around
-                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-                    // Optional: Wrap around
-                    // if (this.x < 0) this.x = canvas.width;
-                    // if (this.x > canvas.width) this.x = 0;
-                    // if (this.y < 0) this.y = canvas.height;
-                    // if (this.y > canvas.height) this.y = 0;
-                }
-
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, 1, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-                    ctx.fill();
-                }
-            }
-
-            // Create particles
-            function createParticles() {
-                particles = [];
-                for (let i = 0; i < particleCount; i++) {
-                    particles.push(new Particle());
-                }
-            }
-            createParticles();
-
-            // Connect particles with lines
-            function connectParticles() {
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dist = Math.sqrt(Math.pow(particles[i].x - particles[j].x, 2) + Math.pow(particles[i].y - particles[j].y, 2));
-
-                        if (dist < linkDistance) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            const opacity = 1 - dist / linkDistance;
-                            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            // Animation loop
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                connectParticles();
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-        });
-    </script>
 </body>
 </html>
