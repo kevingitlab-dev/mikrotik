@@ -45,13 +45,16 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="min-h-screen flex items-center justify-center text-center px-6 py-20 bg-brand-secondary">
-            <div class="max-w-4xl mx-auto">
+        <!-- Hero Section with animated background -->
+        <section class="relative min-h-screen flex items-center justify-center text-center px-6 py-20 bg-gray-900 text-white overflow-hidden">
+            <!-- Canvas for the animated particles -->
+            <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
+
+            <div class="relative z-10 max-w-4xl mx-auto">
                 <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
                     將複雜轉為簡單，<br class="hidden sm:inline">MikroTik 專業技術的最佳夥伴
                 </h2>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-600">
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-300">
                     我們提供客製化的網路解決方案，充分發揮 MikroTik 設備的強大性能，助您事業穩健成長。
                 </p>
                 <a href="#services" class="bg-brand-primary text-white text-lg font-bold px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
@@ -225,6 +228,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -233,6 +237,94 @@
                     });
                 });
             });
+
+            // Particle Animation
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const particleCount = 70; // 已將粒子數量從 200 減少至 100
+            const linkDistance = 150;
+
+            // Adjust canvas size on window resize
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas(); // Initial size setup
+
+            // Particle class
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                }
+
+                update() {
+                    // Update position
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Bounce off walls or wrap around
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                    // Optional: Wrap around
+                    // if (this.x < 0) this.x = canvas.width;
+                    // if (this.x > canvas.width) this.x = 0;
+                    // if (this.y < 0) this.y = canvas.height;
+                    // if (this.y > canvas.height) this.y = 0;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, 1, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                    ctx.fill();
+                }
+            }
+
+            // Create particles
+            function createParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+            createParticles();
+
+            // Connect particles with lines
+            function connectParticles() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dist = Math.sqrt(Math.pow(particles[i].x - particles[j].x, 2) + Math.pow(particles[i].y - particles[j].y, 2));
+
+                        if (dist < linkDistance) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            const opacity = 1 - dist / linkDistance;
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                connectParticles();
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animate);
+            }
+
+            animate();
         });
     </script>
 </body>
