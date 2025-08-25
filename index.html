@@ -273,75 +273,12 @@
     </main>
 
     <footer class="bg-gray-800 text-white mt-16 py-6 px-6">
-        <div class="container mx-auto text-center text-sm flex flex-col md:flex-row justify-between items-center">
+        <div class="container mx-auto text-center text-sm">
             <p>&copy; 2025 MikroTik 專業技術服務團隊。版權所有。</p>
-            <!-- 瀏覽人次計數器 -->
-            <p class="mt-2 md:mt-0 text-gray-400">總瀏覽人次：<span id="visitorCount" class="font-bold text-white">讀取中...</span></p>
         </div>
     </footer>
 
-    <!-- Firebase SDKs -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, onSnapshot, runTransaction, increment } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // 檢查並使用 Canvas 環境提供的變數
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-        // 初始化 Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        // 認證使用者
-        const authPromise = initialAuthToken ? signInWithCustomToken(auth, initialAuthToken) : auth.signInAnonymously();
-
-        // 頁面載入後執行
-        document.addEventListener('DOMContentLoaded', async function () {
-            // 等待認證完成
-            await authPromise;
-
-            // visitor counter function
-            const visitorCountRef = doc(db, 'artifacts', appId, 'public', 'data', 'visitor_counts', 'main');
-
-            try {
-                // 使用交易來確保原子性，避免多個使用者同時更新造成的衝突
-                await runTransaction(db, async (transaction) => {
-                    const docSnap = await transaction.get(visitorCountRef);
-                    if (!docSnap.exists()) {
-                        // 如果文件不存在，則建立並初始化為 1
-                        transaction.set(visitorCountRef, { count: 1 });
-                    } else {
-                        // 如果文件存在，則將計數器加 1
-                        const newCount = docSnap.data().count + 1;
-                        transaction.update(visitorCountRef, { count: newCount });
-                    }
-                });
-
-                console.log("瀏覽人次已成功增加。");
-            } catch (e) {
-                console.error("更新瀏覽人次時發生錯誤: ", e);
-            }
-
-            // 使用 onSnapshot 監聽計數器的即時更新
-            onSnapshot(visitorCountRef, (doc) => {
-                const countSpan = document.getElementById('visitorCount');
-                if (doc.exists()) {
-                    countSpan.textContent = doc.data().count;
-                } else {
-                    countSpan.textContent = '0'; // 若文件不存在，顯示 0
-                }
-            }, (error) => {
-                console.error("即時監聽瀏覽人次時發生錯誤: ", error);
-                const countSpan = document.getElementById('visitorCount');
-                countSpan.textContent = '讀取失敗';
-            });
-        });
-
-        // 原本的程式碼保持不變
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
