@@ -82,7 +82,6 @@
 </head>
 <body class="text-brand-dark">
 
-    <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl md:text-2xl font-bold text-brand-primary" data-translate="headerTitle"></h1>
@@ -94,7 +93,6 @@
                 <a href="#contact" class="hover:text-brand-primary transition-colors" data-translate="navContact"></a>
             </nav>
             <div class="flex items-center space-x-4">
-                <!-- NEW Language Toggle Switch -->
                 <div id="language-toggle" class="toggle-switch-container">
                     <span class="toggle-switch-label zh">中文</span>
                     <span class="toggle-switch-label en">EN</span>
@@ -106,11 +104,8 @@
     </header>
 
     <main>
-        <!-- Hero Section with animated background -->
         <section class="relative min-h-screen flex items-center justify-center text-center px-6 py-20 bg-gray-900 text-white overflow-hidden">
-            <!-- Canvas for the animated particles -->
             <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
-
             <div class="relative z-10 max-w-4xl mx-auto">
                 <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight" data-translate="heroTitle"></h2>
                 <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-300" data-translate="heroSubtitle"></p>
@@ -118,7 +113,6 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
         <section id="about" class="py-20 px-6 scroll-mt-20">
             <div class="container mx-auto">
                 <div class="max-w-3xl mx-auto text-center mb-12">
@@ -145,7 +139,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services" class="py-20 px-6 bg-brand-secondary scroll-mt-20">
             <div class="container mx-auto">
                 <div class="max-w-3xl mx-auto text-center mb-12">
@@ -153,30 +146,26 @@
                     <p class="text-base md:text-lg text-gray-600" data-translate="servicesSubtitle"></p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-                    <!-- Service Card 1 -->
                     <div class="p-8 bg-white rounded-2xl shadow-lg border-t-4 border-brand-primary transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
-                        <span class="text-5xl text-brand-primary mb-6 block">🏭</span>
+                        <span class="text-5xl text-brand-primary mb-6 block">🌐</span>
                         <h4 class="text-2xl font-bold mb-4" data-translate="serviceCard1Title"></h4>
                         <p class="text-sm text-gray-600 mb-6" data-translate="serviceCard1Text"></p>
                         <a href="#contact" class="text-brand-primary font-bold hover:underline transition-colors" data-translate="learnMoreLink"></a>
                     </div>
-                    <!-- Service Card 2 -->
                     <div class="p-8 bg-white rounded-2xl shadow-lg border-t-4 border-brand-primary transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
-                        <span class="text-5xl text-brand-primary mb-6 block">🧠</span>
+                        <span class="text-5xl text-brand-primary mb-6 block">🛡️</span>
                         <h4 class="text-2xl font-bold mb-4" data-translate="serviceCard2Title"></h4>
                         <p class="text-sm text-gray-600 mb-6" data-translate="serviceCard2Text"></p>
                         <a href="#contact" class="text-brand-primary font-bold hover:underline transition-colors" data-translate="learnMoreLink"></a>
                     </div>
-                    <!-- Service Card 3 -->
                     <div class="p-8 bg-white rounded-2xl shadow-lg border-t-4 border-brand-primary transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
-                        <span class="text-5xl text-brand-primary mb-6 block">🏢</span>
+                        <span class="text-5xl text-brand-primary mb-6 block">⚡</span>
                         <h4 class="text-2xl font-bold mb-4" data-translate="serviceCard3Title"></h4>
                         <p class="text-sm text-gray-600 mb-6" data-translate="serviceCard3Text"></p>
                         <a href="#contact" class="text-brand-primary font-bold hover:underline transition-colors" data-translate="learnMoreLink"></a>
                     </div>
                 </div>
 
-                <!-- More detailed services list -->
                 <div class="max-w-3xl mx-auto">
                     <h4 class="text-2xl font-bold mb-4 text-center" data-translate="moreServicesTitle"></h4>
                     <ul class="text-base text-gray-600 space-y-3 list-disc list-inside">
@@ -192,14 +181,12 @@
             </div>
         </section>
 
-        <!-- New Section: Case Studies -->
         <section id="case-studies" class="py-20 px-6 scroll-mt-20">
             <div class="container mx-auto max-w-6xl">
                 <div class="max-w-3xl mx-auto text-center mb-12">
                     <h3 class="text-3xl md:text-4xl font-bold mb-4" data-translate="caseStudiesTitle"></h3>
                     <p class="text-base md:text-lg text-gray-600" data-translate="caseStudiesSubtitle"></p>
                 </div>
-                <!-- Case Study 1: Multi-office VPN -->
                 <div class="mb-16 md:grid md:grid-cols-2 md:gap-12 items-center">
                     <div class="md:order-2 mb-6 md:mb-0">
                         <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/enterprise-vpn-mesh.png" data-translate-alt="caseStudy1ImgAlt" class="w-full h-auto rounded-3xl shadow-xl object-cover">
@@ -209,8 +196,6 @@
                         <p class="text-gray-700 leading-relaxed" data-translate="caseStudy1Text"></p>
                     </div>
                 </div>
-
-                <!-- Case Study 2: Public Wi-Fi Hotspot -->
                 <div class="mb-16 md:grid md:grid-cols-2 md:gap-12 items-center">
                     <div class="mb-6 md:mb-0">
                         <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/hotspot-mikrotik.png" data-translate-alt="caseStudy2ImgAlt" class="w-full h-auto rounded-3xl shadow-xl object-cover">
@@ -220,8 +205,6 @@
                         <p class="text-gray-700 leading-relaxed" data-translate="caseStudy2Text"></p>
                     </div>
                 </div>
-
-                <!-- Case Study 3: Multi-line Load Balancing -->
                 <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
                     <div class="md:order-2 mb-6 md:mb-0">
                         <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/mikrotik-lb.png" data-translate-alt="caseStudy3ImgAlt" class="w-full h-auto rounded-3xl shadow-xl object-cover">
@@ -234,7 +217,6 @@
             </div>
         </section>
 
-        <!-- Comparison Chart Section -->
         <section id="comparison" class="py-20 px-6 scroll-mt-20">
             <div class="container mx-auto max-w-5xl">
                 <div class="max-w-3xl mx-auto text-center mb-12">
@@ -276,25 +258,12 @@
                                 <td class="px-6 py-4 text-brand-primary text-xl" data-translate="yesCheck"></td>
                                 <td class="px-6 py-4 text-red-500 text-xl" data-translate="noCross"></td>
                             </tr>
-                            <tr>
-                                <td class="px-6 py-4 text-left font-medium text-gray-700" data-translate="securityIntegration"></td>
-                                <td class="px-6 py-4 text-brand-primary text-xl" data-translate="yesCheck"></td>
-                                <td class="px-6 py-4" data-translate="standardized"></td>
-                                <td class="px-6 py-4" data-translate="basic"></td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 text-left font-medium text-gray-700" data-translate="industrialExperience"></td>
-                                <td class="px-6 py-4 text-brand-primary text-xl" data-translate="yesCheck"></td>
-                                <td class="px-6 py-4" data-translate="basic"></td>
-                                <td class="px-6 py-4" data-translate="none"></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="bg-gray-800 text-white py-16 px-6 text-center">
             <h2 class="text-3xl font-bold mb-4" data-translate="contactTitle"></h2>
             <p class="mb-8 opacity-80" data-translate="contactSubtitle"></p>
@@ -324,7 +293,7 @@
                     heroSubtitle: "We provide customized network solutions, fully leveraging the powerful performance of MikroTik devices to help your business grow steadily.",
                     heroCta: "Explore Our Services",
                     aboutTitle: "Our Story and Expertise",
-                    aboutText: "We are a team specializing in MikroTik network technology. Our team includes <b>officially certified MTCNA and MTCRE professional engineers</b>, ensuring we provide you with the most professional and reliable design and planning services. <br><br>After discovering that many small and medium-sized enterprises lacked the expertise to harness the powerful functions of high-cost-performance hardware like MikroTik, we decided to become the bridge between technology and needs. Our mission is to make enterprise-level stability and security achievable in the most economical way.",
+                    aboutText: "We are a team specializing in MikroTik network technology. Our team includes <b>officially certified MTCNA and MTCRE professional engineers</b>, ensuring we provide you with the most professional and reliable design and planning services.",
                     aboutCard1Title: "Solving Pain Points",
                     aboutCard1Text: "Transform complex network configurations into easy-to-manage solutions, eliminating technical barriers.",
                     aboutCard2Title: "Cost-Effectiveness",
@@ -332,35 +301,35 @@
                     aboutCard3Title: "Long-Term Partnership",
                     aboutCard3Text: "Building a trusted partnership with clients, from one-time projects to long-term management.",
                     servicesTitle: "Our Professional Services",
-                    servicesSubtitle: "We focus on three high-value niche markets, providing tailored network solutions for different industries.",
-                    serviceCard1Title: "IT/OT Industrial Automation Network",
-                    serviceCard1Text: "Helping the manufacturing industry achieve IT and OT network convergence, based on RouterOS Firewall Mark and VLAN to implement physical network isolation, VPN remote access, and edge computing services to ensure the security and stability of industrial control networks.",
-                    serviceCard2Title: "AIoT Smart IoT Backbone",
-                    serviceCard2Text: "Providing a low-cost, high-security IoT infrastructure for AIoT applications. Implementing multi-point data secure transmission via MPLS and edge AI pre-processing to accelerate data insight and decision-making.",
-                    serviceCard3Title: "Next-Generation Enterprise Network Architecture",
-                    serviceCard3Text: "Facing the new normal of remote work, we provide managed VPN, multi-line load balancing (PCC, NTH), and customized security protection solutions to ensure the network is stable and efficient in any environment.",
+                    servicesSubtitle: "We focus on high-performance network infrastructures, providing tailored solutions for diverse business needs.",
+                    serviceCard1Title: "Headquarters & Multi-branch (Hub & Spoke)",
+                    serviceCard1Text: "Designing secure, centralized network architectures for multi-office enterprises, enabling seamless cross-site resource sharing and unified management.",
+                    serviceCard2Title: "RouterOS Security Hardening",
+                    serviceCard2Text: "Deeply securing MikroTik devices with advanced firewall rules, L7 filtering, and automated threat prevention to protect your corporate intranet.",
+                    serviceCard3Title: "State-of-the-Art Wireguard VPN",
+                    serviceCard3Text: "Deploying the latest high-speed, low-latency encrypted tunnels for secure remote work and branch interconnectivity.",
                     learnMoreLink: "Learn More &rarr;",
                     moreServicesTitle: "More Technical Services",
-                    service1: "<b>VPN Network Setup:</b> Supports multiple protocols (IPsec, L2TP/IPsec, SSTP, OpenVPN) for site-to-site or remote connections.",
-                    service2: "<b>Dynamic Routing Configuration:</b> Provides BGP/OSPF and other dynamic routing protocol configurations to achieve high network availability.",
-                    service3: "<b>Bandwidth Management & QoS:</b> Uses Queue Tree/Simple Queue to implement traffic shaping and fair bandwidth allocation.",
-                    service4: "<b>Load Balancing & Failover:</b> Supports multi-line redundancy and load balancing to ensure uninterrupted network connectivity.",
-                    service5: "<b>WISP/ISP Core Backbone:</b> Assists wireless network service providers in designing and building RouterOS core network architecture.",
-                    service6: "<b>Wireless Network Integration:</b> Provides CAPsMAN centralized management solutions for large-scale Wi-Fi deployment.",
-                    service7: "<b>Network Security Services:</b> Includes firewall rule settings, network vulnerability scanning, and DDoS protection.",
+                    service1: "<b>VPN Network Setup:</b> Supports multiple protocols (IPsec, L2TP, Wireguard) for site-to-site or remote connections.",
+                    service2: "<b>Dynamic Routing Configuration:</b> BGP/OSPF configurations for high availability.",
+                    service3: "<b>Bandwidth Management & QoS:</b> Traffic shaping and fair bandwidth allocation.",
+                    service4: "<b>Load Balancing & Failover:</b> Multi-line redundancy to ensure uninterrupted connectivity.",
+                    service5: "<b>WISP/ISP Core Backbone:</b> Core network design for wireless service providers.",
+                    service6: "<b>Wireless Network Integration:</b> CAPsMAN centralized management for large Wi-Fi deployment.",
+                    service7: "<b>Network Security Services:</b> Firewall rules, vulnerability scanning, and DDoS protection.",
                     caseStudiesTitle: "SME Solution Case Studies",
-                    caseStudiesSubtitle: "How we use MikroTik technology to create efficient and secure network environments for clients in different industries.",
+                    caseStudiesSubtitle: "Real-world applications of MikroTik technology.",
                     caseStudy1Title: "Case 1: Multi-office VPN Interconnection",
-                    caseStudy1Text: "A multinational company with three branch offices needed a secure and cost-effective internal network connection solution. We used MikroTik devices to implement site-to-site encrypted connections between the headquarters and branch offices via IPsec VPN, ensuring the confidentiality and integrity of data transmission. Employees can easily access headquarters server resources, and centralized network management is achieved.",
+                    caseStudy1Text: "Secure and cost-effective internal network connection for a multinational company with three branch offices.",
                     caseStudy1ImgAlt: "Schematic diagram of multi-office VPN interconnection",
-                    caseStudy2Title: "Case 2: Public Wi-Fi Authentication and Management",
-                    caseStudy2Text: "A chain coffee shop wanted to provide customers with free Wi-Fi and collect customer data for marketing analysis. We used MikroTik's HotSpot function with a customized login page, allowing customers to authenticate through social media accounts or email. At the same time, Queue Tree was used to limit the bandwidth of each user, ensuring all customers have a good internet experience and the network quality is not affected by a few people downloading large files.",
-                    caseStudy2ImgAlt: "Schematic diagram of public Wi-Fi authentication and management",
-                    caseStudy3Title: "Case 3: Multi-line Load Balancing & Failover",
-                    caseStudy3Text: "A small online gaming company needed highly stable network connectivity to avoid service interruption due to a single line failure. We deployed a MikroTik router for them and configured a PCC (Per Connection Classifier) load balancing strategy to distribute traffic to two different ISP networks, effectively increasing total bandwidth and connection stability. Once one line fails, the system will automatically switch all traffic to the other line, ensuring uninterrupted service.",
-                    caseStudy3ImgAlt: "Schematic diagram of multi-line load balancing and failover",
+                    caseStudy2Title: "Case 2: Public Wi-Fi Authentication",
+                    caseStudy2Text: "Captive portal and bandwidth management for a retail chain to improve customer experience.",
+                    caseStudy2ImgAlt: "Schematic diagram of public Wi-Fi",
+                    caseStudy3Title: "Case 3: Load Balancing & Failover",
+                    caseStudy3Text: "PCC strategy deployment for an online service to ensure 99.9% uptime across multiple ISPs.",
+                    caseStudy3ImgAlt: "Schematic diagram of load balancing",
                     comparisonTitle: "Why Choose Us?",
-                    comparisonSubtitle: "Compared to traditional vendors or freelancers, our professional services bring you unique value.",
+                    comparisonSubtitle: "Unique value compared to traditional vendors.",
                     featureHeader: "Features",
                     ourTeamHeader: "Our Team",
                     traditionalVendorHeader: "Traditional SI Vendor",
@@ -369,7 +338,7 @@
                     yesCheck: "✅",
                     limited: "Limited",
                     inconsistent: "Inconsistent",
-                    customization: "Customization Flexibility",
+                    customization: "Flexibility",
                     high: "High",
                     low: "Low",
                     medium: "Medium",
@@ -378,15 +347,10 @@
                     hardToEstimate: "Hard to Estimate",
                     longTermSupport: "Long-Term Support",
                     noCross: "❌",
-                    securityIntegration: "Security Integration Capability",
-                    standardized: "Standardized",
-                    basic: "Basic",
-                    industrialExperience: "Industrial Network Experience",
-                    none: "None",
                     contactTitle: "Have a Question?",
-                    contactSubtitle: "Contact us now to schedule a free consultation and let us tailor the most suitable network solution for you.",
+                    contactSubtitle: "Schedule a free consultation for your tailored network solution.",
                     contactBtnText: "Contact Us",
-                    contactEmailInfo: "Or email us directly: kevin.gitlab@gmail.com",
+                    contactEmailInfo: "Or email: kevin.gitlab@gmail.com",
                     contactMailtoSubject: "Consultation Service Inquiry",
                     contactMailtoBody: "Hello, I would like to schedule a consultation.",
                     footerText: "&copy; 2025 MikroTik Professional Services Team. All Rights Reserved."
@@ -403,7 +367,7 @@
                     heroSubtitle: "我們提供客製化的網路解決方案，充分發揮 MikroTik 設備的強大性能，助您事業穩健成長。",
                     heroCta: "探索我們的服務",
                     aboutTitle: "我們的故事與專業",
-                    aboutText: "我們是一支專精於 MikroTik 網路技術的團隊，團隊中<b>擁有經 MikroTik 官方認證的 MTCNA 與 MTCRE 專業工程師</b>，確保為您提供最專業、最可靠的設計與規劃服務。<br><br>在發現市場上，許多中小型企業苦於缺乏專業知識，無法駕馭 MikroTik 這類高性價比硬體的強大功能後，我們決心成為連結技術與需求的橋樑。我們的使命是讓企業級的穩定與安全，以最經濟的方式實現。",
+                    aboutText: "我們是一支專精於 MikroTik 網路技術的團隊，團隊中<b>擁有經 MikroTik 官方認證的 MTCNA 與 MTCRE 專業工程師</b>，確保為您提供最專業、最可靠的設計與規劃服務。",
                     aboutCard1Title: "解決痛點",
                     aboutCard1Text: "將複雜的網路配置化為易於管理的解決方案，消除技術障礙。",
                     aboutCard2Title: "成本效益",
@@ -411,16 +375,16 @@
                     aboutCard3Title: "長期夥伴",
                     aboutCard3Text: "從一次性專案到長期託管，與客戶建立可信賴的夥伴關係。",
                     servicesTitle: "我們的專業服務",
-                    servicesSubtitle: "我們鎖定三大高價值利基市場，為不同產業提供量身打造的網路解決方案。",
-                    serviceCard1Title: "IT/OT 工業自動化網路",
-                    serviceCard1Text: "協助製造業實現 IT 與 OT 網路融合，基於 RouterOS Firewall Mark 及 VLAN 實現網路實體隔離、VPN 遠端存取與邊緣運算服務，確保工控網路安全與穩定。",
-                    serviceCard2Title: "AIoT 智慧物聯網骨幹",
-                    serviceCard2Text: "為 AIoT 應用提供低成本、高安全性的物聯網基礎設施。透過 MPLS 實現多點數據安全傳輸與邊緣 AI 運算預處理，加速數據洞察與決策。",
-                    serviceCard3Title: "新世代企業網路架構",
-                    serviceCard3Text: "面對遠距辦公新常態，提供託管式 VPN、多線路負載平衡 (PCC, NTH) 與客製化資安防護方案，確保網路在任何環境下皆穩定、高效。",
+                    servicesSubtitle: "我們專注於高效能網路基礎設施，為不同規模的企業提供量身打造的解決方案。",
+                    serviceCard1Title: "總部與多據點網路架構 (Hub & Spoke)",
+                    serviceCard1Text: "專為多分公司企業設計，建立穩定且易於管理的中心化網路架構，實現跨地區資源無縫整合。",
+                    serviceCard2Title: "RouterOS 資安防護",
+                    serviceCard2Text: "利用進階防火牆規則、內容過濾與攻擊防護，深度加固 MikroTik 設備，確保企業內網免受外部威脅。",
+                    serviceCard3Title: "最先進的 Wireguard VPN",
+                    serviceCard3Text: "部署高效率、低延遲的現代加密隧道技術，提供遠端辦公與據點互連安全且高速的連線體驗。",
                     learnMoreLink: "了解更多 &rarr;",
                     moreServicesTitle: "更多技術服務內容",
-                    service1: "<b>VPN 網路建置：</b>支援多種協議 (IPsec, L2TP/IPsec, SSTP, OpenVPN) 的站點對站點或遠端連線。",
+                    service1: "<b>VPN 網路建置：</b>支援多種協議 (IPsec, L2TP, Wireguard) 的站點對站點或遠端連線。",
                     service2: "<b>動態路由配置：</b>提供 BGP/OSPF 等動態路由協定配置，實現網路高可用性。",
                     service3: "<b>頻寬管理與 QoS：</b>透過 Queue Tree/Simple Queue 實現流量整形與頻寬公平分配。",
                     service4: "<b>負載平衡與故障轉移：</b>支援多線路備援與負載平衡，確保網路連線不中斷。",
@@ -428,18 +392,18 @@
                     service6: "<b>無線網路整合：</b>提供 CAPsMAN 集中式管理方案，實現大型場域 Wi-Fi 佈建。",
                     service7: "<b>網路安全服務：</b>包括防火牆規則設定、網路漏洞掃描與 DDoS 防護。",
                     caseStudiesTitle: "中小企業解決方案實例",
-                    caseStudiesSubtitle: "我們如何運用 MikroTik 技術，為不同產業的客戶打造高效、安全的網路環境。",
+                    caseStudiesSubtitle: "我們如何運用 MikroTik 技術，為客戶打造高效網路環境。",
                     caseStudy1Title: "案例一：多點辦公室 VPN 串接",
-                    caseStudy1Text: "一家擁有三個分公司的跨國企業，需要一個安全且成本效益高的內部網路連線方案。我們使用 MikroTik 設備，透過 IPsec VPN 實現總部與分公司之間的站點對站點加密連線，確保資料傳輸的機密性與完整性。員工可輕鬆存取總部伺服器資源，並實現中央化的網路管理。",
+                    caseStudy1Text: "透過 IPsec VPN 實現總部與分公司之間的加密連線，確保資料傳輸的機密性。",
                     caseStudy1ImgAlt: "多點辦公室 VPN 串接示意圖",
                     caseStudy2Title: "案例二：公共 Wi-Fi 認證與管理",
-                    caseStudy2Text: "某連鎖咖啡店希望提供顧客免費 Wi-Fi，並蒐集顧客資料進行行銷分析。我們採用 MikroTik 的 HotSpot 功能，搭配客製化登入頁面，讓顧客可透過社群帳號或電子郵件進行認證。同時，利用 Queue Tree 限制每位使用者的頻寬，確保所有顧客都能有良好的上網體驗，不會因少數人下載大檔案而影響網路品質。",
+                    caseStudy2Text: "客製化登入頁面與頻寬限制，提升顧客上網體驗並蒐集行銷資料。",
                     caseStudy2ImgAlt: "公共 Wi-Fi 認證與管理示意圖",
-                    caseStudy3Title: "案例三：多線路負載平衡與故障轉移",
-                    caseStudy3Text: "一間小型線上遊戲公司，需要高度穩定的網路連線，以避免因單一線路斷線而造成服務中斷。我們為其部署了 MikroTik 路由器，並設定了 PCC (Per Connection Classifier) 負載平衡策略，將流量分散到兩條不同的 ISP 網路上，有效提升總頻寬與連線穩定度。一旦其中一條線路失效，系統將自動將所有流量切換到另一條線路，確保服務不中斷。",
-                    caseStudy3ImgAlt: "多線路負載平衡與故障轉移示意圖",
+                    caseStudy3Title: "案例三：多線路負載平衡",
+                    caseStudy3Text: "設定 PCC 負載平衡策略，將流量分散到不同 ISP 網路上，有效提升連線穩定度。",
+                    caseStudy3ImgAlt: "多線路負載平衡示意圖",
                     comparisonTitle: "為什麼選擇我們？",
-                    comparisonSubtitle: "與傳統廠商或自由接案者相比，我們的專業服務能為您帶來獨特的價值。",
+                    comparisonSubtitle: "與傳統廠商相比，我們的專業服務能為您帶來獨特的價值。",
                     featureHeader: "特點",
                     ourTeamHeader: "我們的團隊",
                     traditionalVendorHeader: "傳統 SI 廠商",
@@ -457,13 +421,8 @@
                     hardToEstimate: "難以估算",
                     longTermSupport: "長期支援",
                     noCross: "❌",
-                    securityIntegration: "資安整合能力",
-                    standardized: "標準化",
-                    basic: "基本",
-                    industrialExperience: "工業網路經驗",
-                    none: "無",
                     contactTitle: "有任何疑問嗎？",
-                    contactSubtitle: "立即聯絡我們，安排一場免費的諮詢，讓我們為您量身打造最適合的網路解決方案。",
+                    contactSubtitle: "立即聯絡我們，安排一場免費諮詢，讓我們為您量身打造解決方案。",
                     contactBtnText: "聯絡我們",
                     contactEmailInfo: "或直接來信: kevin.gitlab@gmail.com",
                     contactMailtoSubject: "諮詢服務預約",
@@ -476,7 +435,6 @@
             const htmlTag = document.querySelector('html');
             const contactLink = document.getElementById('contact-link');
 
-            // Function to update the content based on the selected language
             function updateContent(lang) {
                 const elements = document.querySelectorAll('[data-translate]');
                 elements.forEach(el => {
@@ -485,26 +443,20 @@
                         el.innerHTML = translations[lang][key];
                     }
                 });
-
-                // Update image alt text
                 document.querySelectorAll('img[data-translate-alt]').forEach(img => {
                     const key = img.getAttribute('data-translate-alt');
                     if (translations[lang] && translations[lang][key]) {
                         img.alt = translations[lang][key];
                     }
                 });
-
-                // Update mailto link
                 if (contactLink) {
                     const subject = encodeURIComponent(translations[lang].contactMailtoSubject);
                     const body = encodeURIComponent(translations[lang].contactMailtoBody);
                     contactLink.href = `mailto:kevin.gitlab@gmail.com?subject=${subject}&body=${body}`;
                 }
-
                 htmlTag.lang = lang;
             }
 
-            // Function to update the visual state of the toggle switch
             function updateToggleVisual(lang) {
                 if (lang === 'en') {
                     langToggle.classList.remove('active');
@@ -513,7 +465,6 @@
                 }
             }
             
-            // Set initial language and visual state based on browser preference
             let currentLang = 'zh';
             if (navigator.language.startsWith('en')) {
                 currentLang = 'en';
@@ -521,8 +472,6 @@
             updateContent(currentLang);
             updateToggleVisual(currentLang);
 
-
-            // Add click event listener to the new toggle switch
             langToggle.addEventListener('click', () => {
                 currentLang = htmlTag.lang === 'zh' ? 'en' : 'zh';
                 updateContent(currentLang);
@@ -530,7 +479,7 @@
             });
         });
 
-        // The hero section animation script (unchanged)
+        // Hero Section Animation
         const canvas = document.getElementById('hero-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -558,7 +507,6 @@
                 this.baseY = this.y;
                 this.density = (Math.random() * 40) + 5;
             }
-
             draw() {
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
                 ctx.beginPath();
@@ -566,32 +514,18 @@
                 ctx.closePath();
                 ctx.fill();
             }
-
             update() {
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let maxDistance = mouse.radius;
-                let force = (maxDistance - distance) / maxDistance;
-                let directionX = forceDirectionX * force * this.density;
-                let directionY = forceDirectionY * force * this.density;
-
                 if (distance < mouse.radius) {
-                    this.x -= directionX;
-                    this.y -= directionY;
+                    let force = (mouse.radius - distance) / mouse.radius;
+                    this.x -= (dx / distance) * force * this.density;
+                    this.y -= (dy / distance) * force * this.density;
                 } else {
-                    if (this.x !== this.baseX) {
-                        let dx = this.x - this.baseX;
-                        this.x -= dx / 10;
-                    }
-                    if (this.y !== this.baseY) {
-                        let dy = this.y - this.baseY;
-                        this.y -= dy / 10;
-                    }
+                    if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 10;
+                    if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 10;
                 }
-
                 this.draw();
             }
         }
@@ -600,30 +534,23 @@
             particles = [];
             let numberOfParticles = (canvas.width * canvas.height) / 9000;
             for (let i = 0; i < numberOfParticles; i++) {
-                let x = Math.random() * canvas.width;
-                let y = Math.random() * canvas.height;
-                particles.push(new Particle(x, y));
+                particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
             }
         }
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-            }
+            particles.forEach(p => p.update());
             connect();
             requestAnimationFrame(animate);
         }
 
         function connect() {
-            let opacityValue = 1;
             for (let a = 0; a < particles.length; a++) {
                 for (let b = a; b < particles.length; b++) {
-                    let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x))
-                        + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+                    let distance = ((particles[a].x - particles[b].x) ** 2) + ((particles[a].y - particles[b].y) ** 2);
                     if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                        opacityValue = 1 - (distance / 20000);
-                        ctx.strokeStyle = `rgba(255,255,255,${opacityValue})`;
+                        ctx.strokeStyle = `rgba(255,255,255,${1 - (distance / 20000)})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);
@@ -638,7 +565,6 @@
             init();
             animate();
         };
-
     </script>
 </body>
 </html>
