@@ -78,6 +78,36 @@
         .toggle-switch-container.active .toggle-switch-thumb {
             transform: translateX(36px);
         }
+        /* Steps Connector Line */
+        .step-connector {
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .step-connector::after {
+                content: '';
+                position: absolute;
+                top: 2rem;
+                left: 50%;
+                width: 100%;
+                height: 2px;
+                background-color: #E5E7EB;
+                z-index: 0;
+            }
+            .step-connector:last-child::after {
+                display: none;
+            }
+        }
+        /* Certification Logos grayscale to color transition */
+        .cert-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .cert-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="text-brand-dark">
@@ -115,10 +145,19 @@
 
         <section id="about" class="py-20 px-6 scroll-mt-20">
             <div class="container mx-auto">
-                <div class="max-w-3xl mx-auto text-center mb-12">
+                <div class="max-w-4xl mx-auto text-center mb-12">
                     <h3 class="text-3xl md:text-4xl font-bold mb-4" data-translate="aboutTitle"></h3>
-                    <p class="text-base md:text-lg text-gray-600" data-translate="aboutText"></p>
-                </div>
+                    <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-8" data-translate="aboutText"></p>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 mt-8 mb-4">
+                        <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/MTCNA.png" alt="MTCNA Certificate" class="cert-logo h-16 md:h-20 w-auto object-contain" title="MikroTik Certified Network Associate">
+                        <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/MTCRE.png" alt="MTCRE Certificate" class="cert-logo h-16 md:h-20 w-auto object-contain" title="MikroTik Certified Routing Engineer">
+                        <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/certified-in-cybersecurity-cc.png" alt="ISC2 CC Certificate" class="cert-logo h-16 md:h-20 w-auto object-contain" title="Certified in Cybersecurity">
+                        <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/google-cybersecurity-certificate.png" alt="Google Cybersecurity Certificate" class="cert-logo h-16 md:h-20 w-auto object-contain" title="Google Cybersecurity Professional">
+                        <img src="https://raw.githubusercontent.com/kevingitlab-dev/mikrotik/main/fortinet-certified-professional-network-security.png" alt="Fortinet FCP Certificate" class="cert-logo h-16 md:h-20 w-auto object-contain" title="Fortinet Certified Professional">
+                    </div>
+                    </div>
+
                 <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
                     <div class="p-6 bg-white rounded-2xl shadow-md">
                         <span class="text-4xl text-brand-primary mb-4 block">💡</span>
@@ -217,7 +256,7 @@
             </div>
         </section>
 
-        <section id="comparison" class="py-20 px-6 scroll-mt-20">
+        <section id="comparison" class="py-20 px-6 scroll-mt-20 bg-gray-50">
             <div class="container mx-auto max-w-5xl">
                 <div class="max-w-3xl mx-auto text-center mb-12">
                     <h3 class="text-3xl md:text-4xl font-bold mb-4" data-translate="comparisonTitle"></h3>
@@ -225,7 +264,7 @@
                 </div>
                 <div class="overflow-x-auto bg-white rounded-2xl shadow-lg">
                     <table class="min-w-full text-center divide-y divide-gray-200">
-                        <thead class="bg-gray-50 table-rounded">
+                        <thead class="bg-gray-100 table-rounded">
                             <tr>
                                 <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700" data-translate="featureHeader"></th>
                                 <th class="px-6 py-4 text-sm font-semibold text-gray-700" data-translate="ourTeamHeader"></th>
@@ -264,6 +303,49 @@
             </div>
         </section>
 
+        <section id="process" class="py-20 px-6 scroll-mt-20 bg-white">
+            <div class="container mx-auto max-w-6xl">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4" data-translate="processTitle"></h3>
+                    <p class="text-base md:text-lg text-gray-600" data-translate="processSubtitle"></p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center relative">
+                    
+                    <div class="step-connector group">
+                        <div class="w-16 h-16 mx-auto bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 relative z-10 transition-transform transform group-hover:scale-110">1</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-800" data-translate="step1Title"></h4>
+                        <p class="text-sm text-gray-500 px-2" data-translate="step1Desc"></p>
+                    </div>
+
+                    <div class="step-connector group">
+                        <div class="w-16 h-16 mx-auto bg-white border-2 border-brand-primary text-brand-primary rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 relative z-10 transition-transform transform group-hover:scale-110">2</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-800" data-translate="step2Title"></h4>
+                        <p class="text-sm text-gray-500 px-2" data-translate="step2Desc"></p>
+                    </div>
+
+                    <div class="step-connector group">
+                        <div class="w-16 h-16 mx-auto bg-white border-2 border-brand-primary text-brand-primary rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 relative z-10 transition-transform transform group-hover:scale-110">3</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-800" data-translate="step3Title"></h4>
+                        <p class="text-sm text-gray-500 px-2" data-translate="step3Desc"></p>
+                    </div>
+
+                    <div class="step-connector group">
+                        <div class="w-16 h-16 mx-auto bg-white border-2 border-brand-primary text-brand-primary rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 relative z-10 transition-transform transform group-hover:scale-110">4</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-800" data-translate="step4Title"></h4>
+                        <p class="text-sm text-gray-500 px-2" data-translate="step4Desc"></p>
+                    </div>
+
+                    <div class="step-connector group">
+                        <div class="w-16 h-16 mx-auto bg-brand-secondary text-brand-primary rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 relative z-10 transition-transform transform group-hover:scale-110">5</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-800" data-translate="step5Title"></h4>
+                        <p class="text-sm text-gray-500 px-2" data-translate="step5Desc"></p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="bg-gray-800 text-white py-16 px-6 text-center">
             <h2 class="text-3xl font-bold mb-4" data-translate="contactTitle"></h2>
             <p class="mb-8 opacity-80" data-translate="contactSubtitle"></p>
@@ -293,7 +375,7 @@
                     heroSubtitle: "We provide customized network solutions, fully leveraging the powerful performance of MikroTik devices to help your business grow steadily.",
                     heroCta: "Explore Our Services",
                     aboutTitle: "Our Story and Expertise",
-                    aboutText: "We are a team specializing in MikroTik network technology. Our team includes <b>officially certified MTCNA and MTCRE professional engineers</b>, ensuring we provide you with the most professional and reliable design and planning services.",
+                    aboutText: "We are a specialized team in MikroTik network technology. Our members are <b>MikroTik Certified Consultants</b>, holding professional certifications including <b>MTCNA</b>, <b>MTCRE</b>, as well as <b>ISO27001:2022 LA</b>, <b>Google Cybersecurity</b>, and <b>Fortinet FCP-NS</b>, ensuring we provide you with the most professional, secure, and reliable design and planning services.",
                     aboutCard1Title: "Solving Pain Points",
                     aboutCard1Text: "Transform complex network configurations into easy-to-manage solutions, eliminating technical barriers.",
                     aboutCard2Title: "Cost-Effectiveness",
@@ -347,6 +429,18 @@
                     hardToEstimate: "Hard to Estimate",
                     longTermSupport: "Long-Term Support",
                     noCross: "❌",
+                    processTitle: "Consultation Process",
+                    processSubtitle: "A simple, transparent workflow to get your network optimized.",
+                    step1Title: "Inquiry",
+                    step1Desc: "Contact us with your needs or pain points.",
+                    step2Title: "Analysis",
+                    step2Desc: "Our consultants analyze your network architecture.",
+                    step3Title: "Proposal",
+                    step3Desc: "We provide an optimization plan and quotation.",
+                    step4Title: "Execution",
+                    step4Desc: "Customer approval followed by professional implementation.",
+                    step5Title: "Acceptance",
+                    step5Desc: "Final testing, handover, and payment.",
                     contactTitle: "Have a Question?",
                     contactSubtitle: "Schedule a free consultation for your tailored network solution.",
                     contactBtnText: "Contact Us",
@@ -367,7 +461,7 @@
                     heroSubtitle: "我們提供客製化的網路解決方案，充分發揮 MikroTik 設備的強大性能，助您事業穩健成長。",
                     heroCta: "探索我們的服務",
                     aboutTitle: "我們的故事與專業",
-                    aboutText: "我們是一支專精於 MikroTik 網路技術的團隊，團隊中<b>擁有經 MikroTik 官方認證的 MTCNA 與 MTCRE 專業工程師</b>，確保為您提供最專業、最可靠的設計與規劃服務。",
+                    aboutText: "我們是一支專精於 MikroTik 網路技術的團隊，團隊陣容堅強，成員具備 <b>MikroTik 官方認證顧問 (Certified Consultant)</b> 資格，並持有 <b>MTCNA</b>、<b>MTCRE</b> 以及 <b>ISO27001:2022 LA</b> / <b>Google Cybersecurity</b> / <b>Fortinet FCP-NS</b> 等多項國際專業認證，確保為您提供最專業、安全且可靠的設計與規劃服務。",
                     aboutCard1Title: "解決痛點",
                     aboutCard1Text: "將複雜的網路配置化為易於管理的解決方案，消除技術障礙。",
                     aboutCard2Title: "成本效益",
@@ -421,6 +515,18 @@
                     hardToEstimate: "難以估算",
                     longTermSupport: "長期支援",
                     noCross: "❌",
+                    processTitle: "服務諮詢流程",
+                    processSubtitle: "簡單、透明的五步驟，為您打造最佳網路環境",
+                    step1Title: "需求諮詢",
+                    step1Desc: "聯繫我們，說明您的網路狀況與痛點。",
+                    step2Title: "顧問分析",
+                    step2Desc: "分析問題根源，評估現有架構。",
+                    step3Title: "方案與報價",
+                    step3Desc: "提出優化建議書與詳細費用。",
+                    step4Title: "確認施作",
+                    step4Desc: "客戶同意方案後，進行專業設定與部署。",
+                    step5Title: "驗收與付款",
+                    step5Desc: "完工測試，確認無誤後交付並收款。",
                     contactTitle: "有任何疑問嗎？",
                     contactSubtitle: "立即聯絡我們，安排一場免費諮詢，讓我們為您量身打造解決方案。",
                     contactBtnText: "聯絡我們",
